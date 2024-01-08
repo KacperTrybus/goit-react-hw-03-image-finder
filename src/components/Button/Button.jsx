@@ -1,4 +1,5 @@
 import '../styles.css';
+import PropTypes from 'prop-types';
 
 const Button = ({ onClick, showButton }) => {
   return (
@@ -8,6 +9,11 @@ const Button = ({ onClick, showButton }) => {
       </button>
     )
   );
+};
+
+Button.propTypes = {
+  onClick: PropTypes.func.isRequired,
+  showButton: PropTypes.bool.isRequired,
 };
 
 export default Button;

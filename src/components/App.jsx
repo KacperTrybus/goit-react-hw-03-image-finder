@@ -5,6 +5,7 @@ import Button from './Button/Button';
 import Modal from './Modal/Modal';
 import Loader from './Loader/Loader';
 import './styles.css';
+import PropTypes from 'prop-types';
 
 const API_KEY = '39539383-c957f911c4d26df2837324ce8';
 const BASE_URL = 'https://pixabay.com/api/';
@@ -71,6 +72,20 @@ const App = () => {
       />
     </div>
   );
+};
+
+App.propTypes = {
+  images: PropTypes.array.isRequired,
+  query: PropTypes.string.isRequired,
+  page: PropTypes.number.isRequired,
+  isLoading: PropTypes.bool.isRequired,
+  showModal: PropTypes.bool.isRequired,
+  selectedImage: PropTypes.string.isRequired,
+  handleSubmit: PropTypes.func.isRequired,
+  fetchImages: PropTypes.func.isRequired,
+  handleLoadMore: PropTypes.func.isRequired,
+  handleImageClick: PropTypes.func.isRequired,
+  handleCloseModal: PropTypes.func.isRequired,
 };
 
 export default App;
